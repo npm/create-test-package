@@ -1,9 +1,11 @@
 {
   "name": "@npminc/create-test-package",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "create a package for testing purposes",
   "main": "index.js",
   "scripts": {
+    "lint": "standard",
+    "pretest": "npm run lint",
     "test": "node test.js"
   },
   "repository": {

@@ -41,6 +41,6 @@ function createPackage (nameTemplate, json, ready) {
   }
 }
 
-function randomName() {
+function randomName () {
   return Date.now() + '-' + randomString()
 }
