@@ -1,0 +1,31 @@
+{
+  "name": "@npminc/create-test-package",
+  "version": "1.0.0",
+  "description": "create a package for testing purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/npm/create-test-package.git"
+  },
+  "keywords": [
+    "package",
+    "test"
+  ],
+  "author": "Chris Dickinson <chris@neversaw.us> (http://neversaw.us/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/npm/create-test-package/issues"
+  },
+  "homepage": "https://github.com/npm/create-test-package#readme",
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "mktemp": "^0.4.0",
+    "random-string": "^0.1.2",
+    "rimraf": "^2.4.2",
+    "standard": "^5.0.0",
+    "tape": "^4.0.2"
+  }
+}
