@@ -1,9 +1,12 @@
 'use strict'
 
 var createPackage = require('./create-test-package.js')
+var rimraf = require('rimraf')
 var path = require('path')
 var test = require('tape')
 var fs = require('fs')
+
+var createdDirs = []
 
 test('make sure it creates a thing!', function (assert) {
   var pkg = null
@@ -15,6 +18,7 @@ test('make sure it creates a thing!', function (assert) {
       return assert.end(err)
     }
 
+    createdDirs.push(pkg_.dir)
     pkg = pkg_
     fs.readFile(path.join(pkg.dir, 'package.json'), 'utf8', ondata)
   }
@@ -38,6 +42,7 @@ test('make sure it removes a thing!', function (assert) {
     .catch(assert.end)
 
   function onpkg (pkg) {
+    createdDirs.push(pkg.dir)
     return pkg.delete()
   }
 
@@ -50,4 +55,15 @@ test('make sure it removes a thing!', function (assert) {
       })
     })
   }
+})
+
+test('delete created dirs', function (assert) {
+  var pending = createdDirs.length
+  createdDirs.forEach(function (xs) {
+    rimraf(xs, function () {
+      if (!--pending) {
+        assert.end()
+      }
+    })
+  })
 })

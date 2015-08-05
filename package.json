@@ -2,7 +2,7 @@
   "name": "create-test-package",
   "version": "1.0.0",
   "description": "create a package for testing purposes",
-  "main": "index.js",
+  "main": "create-test-package.js",
   "scripts": {
     "lint": "standard",
     "pretest": "npm run lint",
