@@ -1,6 +1,6 @@
 {
   "name": "create-test-package",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "create a package for testing purposes",
   "main": "index.js",
   "scripts": {
